@@ -14,20 +14,6 @@
 #define PLLCTL_SETTING  CLK_PLLCTL_100MHz_HIRC
 #define PLL_CLOCK       50000000
 
-void TIMER0_Init(void)
-{
-    /* Enable IP clock */
-    CLK->APBCLK |= CLK_APBCLK_TMR0CKEN_Msk;
-    /* Select IP clock source */
-    CLK->CLKSEL1 = (CLK->CLKSEL1 & (~CLK_CLKSEL1_TMR0SEL_Msk)) | CLK_CLKSEL1_TMR0SEL_XTAL;
-    // Set timer frequency to 3HZ
-    TIMER_Open(TIMER0, TIMER_PERIODIC_MODE, 3);
-    // Enable timer interrupt
-    TIMER_EnableInt(TIMER0);
-    // Start Timer 3
-    TIMER_Start(TIMER0);
-}
-
 void SYS_Init(void)
 {
     /* Unlock protected registers */
@@ -54,9 +40,7 @@ void SYS_Init(void)
     //CLK->CLKSEL0 |= CLK_CLKSEL0_HCLKSEL_PLL;
     CLK->CLKSEL0 = (CLK->CLKSEL0 & (~CLK_CLKSEL0_HCLKSEL_Msk)) | CLK_CLKSEL0_HCLKSEL_PLL;
     /* Update System Core Clock */
-    PllClock        = PLL_CLOCK;            // PLL
-    SystemCoreClock = PLL_CLOCK / 1;        // HCLK
-    CyclesPerUs     = PLL_CLOCK / 1000000;  // For CLK_SysTickDelay()
+    CyclesPerUs     = 50;  // For CLK_SysTickDelay()
 
     /* Enable IP clock */
     CLK->APBCLK = CLK_APBCLK_SPICKEN_Msk;
@@ -79,7 +63,6 @@ int main(void)
     GetDataFlashInfo(&g_dataFlashAddr, &g_dataFlashSize);
     SPI_Init();
     GPIO_Init();
-    TIMER0_Init();
 
     while (1)
     {
@@ -88,7 +71,7 @@ int main(void)
             goto _ISP;
         }
 
-        if (TIMER0->INTSTS & TIMER_INTSTS_TIF_Msk)
+        if (SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk)
         {
             goto _APROM;
         }
@@ -100,7 +83,10 @@ _ISP:
     {
         if (bSpiDataReady == 1)
         {
-            memcpy(cmd_buff, spi_rcvbuf, 64);
+            //memcpy(cmd_buff, spi_rcvbuf, 64);
+            int i;
+            for (i=0; i<16; i++)
+                cmd_buff[i] = spi_rcvbuf[i];
             bSpiDataReady = 0;
             ParseCmd((unsigned char *)cmd_buff, 64);
         }
