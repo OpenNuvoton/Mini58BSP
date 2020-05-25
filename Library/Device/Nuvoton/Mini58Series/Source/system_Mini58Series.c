@@ -6,6 +6,7 @@
  * @brief    Mini58 series system clock init code and assert handler
  *
  * @note
+ * SPDX-License-Identifier: Apache-2.0
  * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
  *****************************************************************************/
 
