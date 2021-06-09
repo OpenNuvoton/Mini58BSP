@@ -55,6 +55,9 @@ void SYS_Init(void)
     SYS->P1_MFP &= ~(SYS_MFP_P12_Msk | SYS_MFP_P13_Msk);
     SYS->P1_MFP |= (SYS_MFP_P12_UART0_RXD | SYS_MFP_P13_UART0_TXD);
 
+    /* I2C pin enable schmitt trigger */
+    SYS->P3_MFP |= SYS_MFP_TYPE_Msk(4) | SYS_MFP_TYPE_Msk(5);
+
     /* Lock protected registers */
     SYS_LockReg();
 
