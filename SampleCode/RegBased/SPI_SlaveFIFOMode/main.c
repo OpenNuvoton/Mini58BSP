@@ -131,6 +131,7 @@ void SPI_IRQHandler(void)
 int main(void)
 {
     uint32_t u32DataCount;
+    int tout;
 
     /* Init System, IP clock and multi-function I/O */
     SYS_Init();
@@ -162,7 +163,13 @@ int main(void)
                     (1 << SPI_FIFOCTL_RXTH_Pos));
     NVIC_EnableIRQ(SPI_IRQn);
 
-    while(!g_u8Done);
+    tout = SystemCoreClock;
+    while (!g_u8Done && (tout-- > 0));
+    if (!g_u8Done)
+    {
+        printf("Wait interrupt timeout!\n");
+        while (1);
+    }
 
     printf("Received data:\n");
     for(u32DataCount=0; u32DataCount<TEST_COUNT; u32DataCount++)

@@ -7,7 +7,7 @@
  *
  * @note
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
 *****************************************************************************/
 #include "Mini58Series.h"
 
@@ -591,4 +591,4 @@ uint32_t PWM_GetCenterIntFlag (PWM_T *pwm, uint32_t u32ChannelNum)
 
 /*@}*/ /* end of group Mini58_Device_Driver */
 
-/*** (C) COPYRIGHT 2015 Nuvoton Technology Corp. ***/
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/

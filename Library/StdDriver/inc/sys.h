@@ -7,7 +7,7 @@
  *
  * @note
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
  *****************************************************************************/
 #ifndef __SYS_H__
 #define __SYS_H__
@@ -461,3 +461,5 @@ void SYS_DisableBOD(void);
 #endif
 
 #endif //__SYS_H__
+
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/

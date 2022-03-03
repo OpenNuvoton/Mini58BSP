@@ -7,7 +7,7 @@
  *
  * @note
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
 *****************************************************************************/
 #include "Mini58Series.h"
 
@@ -133,8 +133,9 @@ void TIMER_Delay(TIMER_T *timer, uint32_t u32Usec)
         __NOP();
     }
 
-    while(timer->CTL & TIMER_CTL_ACTSTS_Msk);
+    delay = (SystemCoreClock / 1000000) * u32Usec * 10;
 
+    while ((timer->CTL & TIMER_CTL_ACTSTS_Msk) && (delay-- > 0));
 }
 
 /**
@@ -228,4 +229,4 @@ uint32_t TIMER_GetModuleClock(TIMER_T *timer)
 
 /*@}*/ /* end of group Mini58_Device_Driver */
 
-/*** (C) COPYRIGHT 2015 Nuvoton Technology Corp. ***/
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/

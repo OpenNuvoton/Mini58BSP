@@ -75,6 +75,18 @@ void SYS_Init(void)
     SYS->REGLCTL = 0;
 }
 
+static void wait_ZIF0(void)
+{
+    int32_t tout = SystemCoreClock;
+
+    while (((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << 0)) == 0) && (tout-- > 0));
+    if ((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << 0)) == 0)
+    {
+        printf("wait ZIF0 timeout!\n");
+        while (1);
+    }
+}
+
 void UART_Init(void)
 {
     // 115200 bps
@@ -140,7 +152,7 @@ int32_t main (void)
         PWM->PERIOD0= 401;
 
         // Polling, Wait 1 period interrupt flags
-        while((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << 0)) == 0);
+        wait_ZIF0();
         PWM->INTSTS = (PWM_INTSTS_ZIF0_Msk << 0);
 
         // Disable PWM Precise Center Aligned Type
@@ -151,7 +163,7 @@ int32_t main (void)
         PWM->PERIOD0 = 401;
 
         // Polling, Wait 1 period interrupt flags
-        while((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << 0)) == 0);
+        wait_ZIF0();
         PWM->INTSTS = (PWM_INTSTS_ZIF0_Msk << 0);
 
         // Enable PWM Precise Center Aligned Type
@@ -162,7 +174,7 @@ int32_t main (void)
         PWM->PERIOD0 = 402;
 
         // Polling, Wait 1 period interrupt flags
-        while((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << 0)) == 0);
+        wait_ZIF0();
         PWM->INTSTS = (PWM_INTSTS_ZIF0_Msk << 0);
 
         // Disable PWM Precise Center Aligned Type
@@ -173,7 +185,7 @@ int32_t main (void)
         PWM->PERIOD0 = 402;
 
         // Polling, Wait 1 period interrupt flags
-        while((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << 0)) == 0);
+        wait_ZIF0();
         PWM->INTSTS = (PWM_INTSTS_ZIF0_Msk << 0);
     }
 

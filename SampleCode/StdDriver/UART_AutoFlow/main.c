@@ -199,6 +199,8 @@ void AutoFlow_FunctionTest()
 {
     uint8_t u8Item;
     uint32_t u32i;
+    int32_t tout;
+
     printf("+-----------------------------------------------------------+\n");
     printf("|     Pin Configure                                         |\n");
     printf("+-----------------------------------------------------------+\n");
@@ -238,7 +240,13 @@ void AutoFlow_FunctionTest()
             UART_WRITE(UART0,((u32i+(0x30))&0xFF));
 
             /* Slave will control RTS pin*/
-            while(UART0->MODEM & UART_MODEM_RTSSTS_Msk);
+            tout = SystemCoreClock;
+            while ((UART0->MODEM & UART_MODEM_RTSSTS_Msk) && (tout-- > 0));
+            if (UART0->MODEM & UART_MODEM_RTSSTS_Msk)
+            {
+                printf("RTS pin not set by slave!\n");
+                while (1);
+            }
         }
 
         printf("\n Transmit Done\n");

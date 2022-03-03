@@ -76,6 +76,18 @@ void SYS_Init(void)
     SystemCoreClockUpdate();
 }
 
+static void wait_CTL_SI(void)
+{
+    int32_t tout = (SystemCoreClock / 10);
+
+    while(!(I2C->CTL & I2C_CTL_SI_Msk) && (tout-- > 0));
+    if (!(I2C->CTL & I2C_CTL_SI_Msk))
+    {
+        printf("Wait CTL_SI timeout!\n");
+        while (1);
+    }
+}
+
 void ACK_Polling(void)
 {
     uint32_t u32Status;
@@ -87,12 +99,12 @@ void ACK_Polling(void)
     {
         /* Send start */
         I2C->CTL = (I2C->CTL & ~I2C_CTL_SI_Msk) | I2C_CTL_STA_Msk;         // S
-        while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), S
+        wait_CTL_SI();                        // (INT), S
 
         /* Send control byte */
         I2C->DAT = EEPROM_WRITE_ADDR;       // ConByte(W)
         I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
-        while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), ConByte(W)
+        wait_CTL_SI();                        // (INT), ConByte(W)
 
         u32Status = I2C_GET_STATUS(I2C);
         I2C->CTL = (I2C->CTL & ~0x3c) | I2C_STO | I2C_SI; // STOP
@@ -107,33 +119,32 @@ void EEPROM_Write(void)
 {
     /* Send start */
     I2C->CTL = (I2C->CTL & ~I2C_CTL_SI_Msk) | I2C_CTL_STA_Msk;   // S
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), S
+    wait_CTL_SI();                                               // (INT), S
 
     /* Send control byte */
     I2C->DAT = EEPROM_WRITE_ADDR;                                // (DATA), ConByte(W)
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
     I2C->DAT = (0x00 >> 8) & 0xFFUL;                             // (DATA), Add-H
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), ConByte(W)
+    wait_CTL_SI();                                               // (INT), ConByte(W)
 
     I2C->DAT = 0x01 & 0xFFUL;                                    // (DATA), Add-L
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), Add-H
+    wait_CTL_SI();                                               // (INT), Add-H
 
     I2C->DAT = WBuf[0];                                          // (DATA), data0
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), Add-L
+    wait_CTL_SI();                                               // (INT), Add-L
 
     I2C->DAT = WBuf[1];                                          // (DATA), data1
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), data0
+    wait_CTL_SI();                                               // (INT), data0
 
     I2C->DAT = WBuf[2];                                          // (DATA), data2
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), data1
+    wait_CTL_SI();                                               // (INT), data1
 
-
-    I2C->CTL = (I2C->CTL & ~0x3c) | I2C_STO | I2C_SI;             // STOP
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                         // (INT), data2
+    I2C->CTL = (I2C->CTL & ~0x3c) | I2C_STO | I2C_SI;            // STOP
+    wait_CTL_SI();                                               // (INT), data2
 
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
 }
@@ -142,38 +153,38 @@ void EEPROM_Read(void)
 {
     /* Send start */
     I2C->CTL = (I2C->CTL & ~I2C_CTL_SI_Msk) | I2C_CTL_STA_Msk;   // S
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), S
+    wait_CTL_SI();                                               // (INT), S
 
     /* Send control byte */
     I2C->DAT = EEPROM_WRITE_ADDR;                                // (DATA), ConByte(W)
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
     I2C->DAT = (0x00 >> 8) & 0xFFUL;                             // (DATA), Add-H
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), ConByte(W)
+    wait_CTL_SI();                                               // (INT), ConByte(W)
 
     I2C->DAT = 0x01 & 0xFFUL;                                    // (DATA), Add-L
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), Add-H
+    wait_CTL_SI();                                               // (INT), Add-H
 
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_STA | I2C_SI;            // Sr
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), ADD-L
+    wait_CTL_SI();                                               // (INT), ADD-L
 
     I2C->DAT = EEPROM_READ_ADDR;                                 // (DATA), ControlByte-Read
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_AA | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), Sr
+    wait_CTL_SI();                                               // (INT), Sr
 
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_AA | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), ConrtolByte-Read
+    wait_CTL_SI();                                               // (INT), ConrtolByte-Read
 
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_AA | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), data0
+    wait_CTL_SI();                                               // (INT), data0
     RBuf[0] = I2C->DAT;                                          // (DATA), data0
 
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_AA | I2C_SI;
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), data1
+    wait_CTL_SI();                                               // (INT), data1
     RBuf[1] = I2C->DAT;                                          // (DATA), data1
 
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_STO | I2C_SI;            // STOP
-    while(!(I2C->CTL & I2C_CTL_SI_Msk));                        // (INT), data2
+    wait_CTL_SI();                                               // (INT), data2
     RBuf[2] = I2C->DAT;                                          // (DATA), data2
 
     I2C->CTL = (I2C->CTL & ~0x3c) | I2C_SI;

@@ -17,10 +17,10 @@
 /*----------------------------------------------------------------------------
   Clock Variable definitions
  *----------------------------------------------------------------------------*/
-uint32_t __HSI = __HIRC;                 /*!< Factory Default is internal high speed RC 44.2368M divided by 2 */
-uint32_t SystemCoreClock;                /*!< System Clock Frequency (Core Clock) */
-uint32_t PllClock = __HIRC;              /*!< PLL Output Clock Frequency         */
-uint32_t CyclesPerUs;                    /*!< Cycles per micro second */
+uint32_t SystemCoreClock  = __HIRC;            /*!< System Clock Frequency (Core Clock)*/
+uint32_t __HSI = __HIRC;                       /*!< Factory Default is internal high speed RC 44.2368M divided by 2 */
+uint32_t PllClock = __HIRC;                    /*!< PLL Output Clock Frequency         */
+uint32_t CyclesPerUs;                          /*!< Cycles per micro second */
 
 /**
  *  @brief  Check HIRC clock rate feed to HCLK

@@ -64,12 +64,26 @@ void SYS_Init(void)
 
 void PWM_Polling(uint8_t Channel)
 {
+    int32_t tout;
+
     // Polling, Wait 1 period interrupt flags
-    while(PWM_GetPeriodIntFlag(PWM, Channel) == 0);
+    tout = SystemCoreClock;
+    while ((PWM_GetPeriodIntFlag(PWM, Channel) == 0) && (tout-- > 0));
+    if (PWM_GetPeriodIntFlag(PWM, Channel) == 0)
+    {
+        printf("PWM_GetPeriodIntFlag timeout!\n");
+        while (1);
+    }
     PWM_ClearPeriodIntFlag(PWM, Channel);
 
     // Polling, Wait 2 period interrupt flags
-    while(PWM_GetPeriodIntFlag(PWM, Channel) == 0);
+    tout = SystemCoreClock;
+    while ((PWM_GetPeriodIntFlag(PWM, Channel) == 0) &&  (tout-- > 0));
+    if (PWM_GetPeriodIntFlag(PWM, Channel) == 0)
+    {
+        printf("PWM_GetPeriodIntFlag timeout!\n");
+        while (1);
+    }
     PWM_ClearPeriodIntFlag(PWM, Channel);
 }
 

@@ -125,6 +125,7 @@ void SPI_Init(void)
 void SpiLoopbackTest(void)
 {
     uint32_t u32DataCount, u32TestCount, u32Err;
+    int32_t tout;
 
     printf("\nSPI Loopback test ");
 
@@ -148,11 +149,17 @@ void SpiLoopbackTest(void)
             putchar('.');
         }
 
-        while(1)
+        while (1)
         {
             SPI_WRITE_TX(SPI, g_au32SourceData[u32DataCount]);
             SPI_TRIGGER(SPI);
-            while(SPI_IS_BUSY(SPI));
+            tout = SystemCoreClock;
+            while (SPI_IS_BUSY(SPI) && (tout-- > 0));
+            if (SPI_IS_BUSY(SPI))
+            {
+                printf("SPI BUSY timeout!\n");
+                while (1);
+            }
 
             g_au32DestinationData[u32DataCount] = SPI_READ_RX(SPI);
             u32DataCount++;

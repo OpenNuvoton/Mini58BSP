@@ -164,6 +164,7 @@ int main()
 {
     uint8_t     u8Item;
     uint32_t    u32Data;
+    int32_t     tout;
 
     SYS_Init();
     UART_Init();
@@ -236,8 +237,9 @@ int main()
             func = (FUNC_PTR *)FMC_Read(FMC_LDROM_BASE + 4);
             sp = FMC_Read(FMC_LDROM_BASE);
 
+            tout = SystemCoreClock / 10;
             printf("\n\nChange VECMAP and branch to LDROM...\n");
-            while (!(UART0->FIFOSTS & UART_FIFOSTS_TXEMPTY_Msk));
+            while ((!(UART0->FIFOSTS & UART_FIFOSTS_TXEMPTY_Msk)) && (tout-- > 0));
 
             /*  NOTE!
              *     Before change VECMAP, user MUST disable all interrupts.

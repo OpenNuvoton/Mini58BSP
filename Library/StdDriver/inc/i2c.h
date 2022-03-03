@@ -7,7 +7,7 @@
  *
  * @note
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
  *****************************************************************************/
 #ifndef __I2C_H__
 #define __I2C_H__
@@ -61,20 +61,36 @@ extern "C"
 /**
   * @brief This macro only set STOP bit to the control register of I2C module.
   * @param[in] i2c is the base address of I2C module.
-  * @return none
+  * @return  0   success
+  * @return  -1  time out
   */
-#define I2C_STOP(i2c) \
-do { \
-    (i2c)->CTL |= (I2C_CTL_SI_Msk | I2C_CTL_STO_Msk); \
-    while((i2c)->CTL & I2C_CTL_STO_Msk); \
-} while(0)
+__STATIC_INLINE int32_t I2C_STOP(I2C_T *i2c)
+{
+    int32_t   tout = (SystemCoreClock / 10);
+
+    i2c->CTL |= (I2C_CTL_SI_Msk | I2C_CTL_STO_Msk);
+    while ((i2c->CTL & I2C_CTL_STO_Msk) && (tout-- > 0)) ;
+    if (i2c->CTL & I2C_CTL_STO_Msk)
+        return -1;
+    return 0;
+}
 
 /**
   * @brief This macro will return when I2C module is ready.
   * @param[in] i2c is the base address of I2C module.
-  * @return none
+  * @return  0   success
+  * @return  -1  time out
   */
-#define  I2C_WAIT_READY(i2c) while(!((i2c)->CTL & I2C_CTL_SI_Msk))
+__STATIC_INLINE int32_t I2C_WAIT_READY(I2C_T *i2c)
+{
+    int32_t   tout = (SystemCoreClock / 10);
+
+    while (!(i2c->CTL & I2C_CTL_SI_Msk) && (tout-- > 0));
+    if (!(i2c->CTL & I2C_CTL_SI_Msk))
+        return -1;
+    return 0;
+}
+
 
 /**
   * @brief This macro disables the FIFO function.
@@ -210,4 +226,4 @@ void I2C_DisableWakeup(I2C_T *i2c);
 
 #endif //__I2C_H__
 
-/*** (C) COPYRIGHT 2015 Nuvoton Technology Corp. ***/
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/

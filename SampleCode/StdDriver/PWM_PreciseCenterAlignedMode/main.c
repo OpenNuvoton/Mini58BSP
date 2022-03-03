@@ -64,6 +64,8 @@ void SYS_Init(void)
 
 int32_t main (void)
 {
+    int32_t tout;
+
     /* Init System, IP clock and multi-function I/O
        In the end of SYS_Init() will issue SYS_LockReg()
        to lock protected register. If user want to write
@@ -114,7 +116,13 @@ int32_t main (void)
         PWM_SET_CNR(PWM, 0, 401);
 
         // Polling, Wait 1 period interrupt flags
-        while(PWM_GetPeriodIntFlag(PWM, 0) == 0);
+        tout = SystemCoreClock;
+        while ((PWM_GetPeriodIntFlag(PWM, 0) == 0) && (tout-- > 0));
+        if (PWM_GetPeriodIntFlag(PWM, 0) == 0)
+        {
+            printf("PWM_GetPeriodIntFlag timeout!\n");
+            while (1);
+        }
         PWM_ClearPeriodIntFlag(PWM, 0);
 
         // Disable PWM Precise Center Aligned Type
@@ -125,7 +133,13 @@ int32_t main (void)
         PWM_SET_CNR(PWM, 0, 401);
 
         // Polling, Wait 1 period interrupt flags
-        while(PWM_GetPeriodIntFlag(PWM, 0) == 0);
+        tout = SystemCoreClock;
+        while ((PWM_GetPeriodIntFlag(PWM, 0) == 0) && (tout-- > 0));
+        if (PWM_GetPeriodIntFlag(PWM, 0) == 0)
+        {
+            printf("PWM_GetPeriodIntFlag timeout!\n");
+            while (1);
+        }
         PWM_ClearPeriodIntFlag(PWM, 0);
 
         // Enable PWM Precise Center Aligned Type
@@ -136,7 +150,13 @@ int32_t main (void)
         PWM_SET_CNR(PWM, 0, 402);
 
         // Polling, Wait 1 period interrupt flags
-        while(PWM_GetPeriodIntFlag(PWM, 0) == 0);
+        tout = SystemCoreClock;
+        while ((PWM_GetPeriodIntFlag(PWM, 0) == 0) && (tout-- > 0));
+        if (PWM_GetPeriodIntFlag(PWM, 0) == 0)
+        {
+            printf("PWM_GetPeriodIntFlag timeout!\n");
+            while (1);
+        }
         PWM_ClearPeriodIntFlag(PWM, 0);
 
         // Disable PWM Precise Center Aligned Type
@@ -147,7 +167,13 @@ int32_t main (void)
         PWM_SET_CNR(PWM, 0, 402);
 
         // Polling, Wait 1 period interrupt flags
-        while(PWM_GetPeriodIntFlag(PWM, 0) == 0);
+        tout = SystemCoreClock;
+        while ((PWM_GetPeriodIntFlag(PWM, 0) == 0) && (tout-- > 0));
+        if (PWM_GetPeriodIntFlag(PWM, 0) == 0)
+        {
+            printf("PWM_GetPeriodIntFlag timeout!\n");
+            while (1);
+        }
         PWM_ClearPeriodIntFlag(PWM, 0);
     }
 

@@ -133,6 +133,7 @@ void SPI_Init(void)
 void SpiLoopbackTest(void)
 {
     uint32_t u32DataCount, u32TestCount, u32Err;
+    int32_t tout;
 
     printf("\nSPI Loopback test ");
 
@@ -165,7 +166,13 @@ void SpiLoopbackTest(void)
             SPI->CTL |= SPI_CTL_SPIEN_Msk;
 
             /* Wait SPI is free */
-            while(SPI->CTL & SPI_CTL_SPIEN_Msk);
+            tout = SystemCoreClock;
+            while ((SPI->CTL & SPI_CTL_SPIEN_Msk) && (tout-- > 0));
+            if (SPI->CTL & SPI_CTL_SPIEN_Msk)
+            {
+                printf("wait SPI_CTL_SPIEN timeout!\n");
+                while (1);
+            }
 
             /* Read Data */
             g_au32DestinationData[u32DataCount] = SPI->RX;

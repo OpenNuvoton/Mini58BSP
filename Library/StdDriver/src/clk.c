@@ -7,7 +7,7 @@
  *
  * @note
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
  *****************************************************************************/
 #include "Mini58Series.h"
 /** @addtogroup Mini58_Device_Driver Mini58 Device Driver
@@ -592,19 +592,26 @@ void CLK_DisablePLL(void)
   * @brief  This function execute delay function.
   * @param[in]  us  Delay time. The Max value is 2^24 / CPU Clock(MHz). Ex:
   *                             50MHz => 335544us, 48MHz => 349525us, 28MHz => 699050us ...
-  * @return None
+  * @return     0   success
+  *             -1  clock time out
   * @details    Use the SysTick to generate the delay time and the UNIT is in us.
   *             The SysTick clock source is from HCLK, i.e the same as system core clock.
   */
-void CLK_SysTickDelay(uint32_t us)
+int32_t CLK_SysTickDelay(uint32_t us)
 {
+    int32_t  tout = SystemCoreClock * ((us / 1000000) + 1) + (SystemCoreClock / 2);
+
     SysTick->LOAD = us * CyclesPerUs;
     SysTick->VAL  =  (0x00);
     SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_ENABLE_Msk;
 
     /* Waiting for down-count to zero */
-    while((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) == 0);
+    while (((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) == 0) &&
+            (tout-- > 0));
+    if ((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) == 0)
+        return -1;      /* time out */
     SysTick->CTRL = 0;
+    return 0;
 }
 
 /**
@@ -639,4 +646,4 @@ uint32_t CLK_WaitClockReady(uint32_t u32ClkMask)
 
 /*@}*/ /* end of group Mini58_Device_Driver */
 
-/*** (C) COPYRIGHT 2015 Nuvoton Technology Corp. ***/
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/

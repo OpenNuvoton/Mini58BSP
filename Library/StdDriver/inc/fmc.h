@@ -7,7 +7,7 @@
  *
  * @note
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
  ******************************************************************************/
 #ifndef __FMC_H__
 #define __FMC_H__
@@ -43,6 +43,11 @@ extern "C"
 #define FMC_LDROM_SIZE          0xA00           /*!< LDROM Size (2 Kbytes)       */
 #define FMC_SPROM_SIZE          0x200           /*!< SPROM Size (512 bytes)      */
 
+#define FMC_TIMEOUT_READ        ((SystemCoreClock/10)*2) /*!< Read command time-out 100 ms         \hideinitializer */
+#define FMC_TIMEOUT_WRITE       ((SystemCoreClock/10)*2) /*!< Write command time-out 100 ms        \hideinitializer */
+#define FMC_TIMEOUT_ERASE       ((SystemCoreClock/10)*4) /*!< Erase command time-out 200 ms        \hideinitializer */
+#define FMC_TIMEOUT_CHKSUM      (SystemCoreClock*2)      /*!< Get checksum command time-out 2 s    \hideinitializer */
+
 
 /*---------------------------------------------------------------------------------------------------------*/
 /*  ISPCMD constant definitions                                                                            */
@@ -59,6 +64,11 @@ extern "C"
 
 
 /*@}*/ /* end of group Mini58_FMC_EXPORTED_CONSTANTS */
+
+/*---------------------------------------------------------------------------------------------------------*/
+/*  Global variables                                                                                       */
+/*---------------------------------------------------------------------------------------------------------*/
+extern int32_t  g_FMC_i32ErrCode;
 
 /** @addtogroup Mini58_FMC_EXPORTED_FUNCTIONS FMC Exported Functions
   @{
@@ -91,7 +101,7 @@ extern uint32_t FMC_ReadUID(uint32_t u32Index);
 extern uint32_t FMC_ReadDataFlashBaseAddr(void);
 extern void FMC_SetVectorPageAddr(uint32_t u32PageAddr);
 extern uint32_t FMC_GetVectorPageAddr(void);
-extern void FMC_Write(uint32_t u32Addr, uint32_t u32Data);
+extern int32_t FMC_Write(uint32_t u32Addr, uint32_t u32Data);
 extern int32_t FMC_ReadConfig(uint32_t *u32Config, uint32_t u32Count);
 extern int32_t FMC_WriteConfig(uint32_t *u32Config, uint32_t u32Count);
 extern int32_t FMC_GetCRC32Sum(uint32_t addr, uint32_t count, uint32_t *chksum);
@@ -109,4 +119,5 @@ extern int32_t FMC_GetCRC32Sum(uint32_t addr, uint32_t count, uint32_t *chksum);
 
 
 #endif
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/
 

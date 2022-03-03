@@ -195,6 +195,8 @@ void UART_TEST_HANDLE()
 /*---------------------------------------------------------------------------------------------------------*/
 void UART_FunctionTest()
 {
+    int tout;
+
     printf("+-----------------------------------------------------------+\n");
     printf("|  UART Function Test                                       |\n");
     printf("+-----------------------------------------------------------+\n");
@@ -213,7 +215,13 @@ void UART_FunctionTest()
     /* Enable Interrupt and install the call back function */
     UART_ENABLE_INT(UART0, (UART_INTEN_RDAIEN_Msk | UART_INTEN_THREIEN_Msk | UART_INTEN_RXTOIEN_Msk));
     NVIC_EnableIRQ(UART0_IRQn);
-    while(g_bWait);
+    tout = SystemCoreClock / 10;
+    while (g_bWait && (tout-- > 0));
+    if (g_bWait)
+    {
+        printf("Wait interrupt timeout!\n");
+        while (1);
+    }
 
     /* Disable Interrupt */
     UART_DISABLE_INT(UART0, (UART_INTEN_RDAIEN_Msk | UART_INTEN_THREIEN_Msk | UART_INTEN_RXTOIEN_Msk));

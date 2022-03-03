@@ -7,7 +7,7 @@
 *
 * @note
  * SPDX-License-Identifier: Apache-2.0
-* Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
 *****************************************************************************/
 
 #include <stdio.h>
@@ -200,16 +200,16 @@ uint32_t UART_Read(UART_T* uart, uint8_t *pu8RxBuf, uint32_t u32ReadBytes)
 {
     uint32_t  u32Count, u32delayno;
 
-    for(u32Count=0; u32Count < u32ReadBytes; u32Count++)
+    for (u32Count = 0; u32Count < u32ReadBytes; u32Count++)
     {
-        u32delayno = 0;
+        u32delayno = (SystemCoreClock / 10);
 
-        while(uart->FIFOSTS & UART_FIFOSTS_RXEMPTY_Msk)   /* Check RX empty => failed */
-        {
-            u32delayno++;
-            if( u32delayno >= 0x40000000 )
-                return FALSE;
-        }
+        while ((uart->FIFOSTS & UART_FIFOSTS_RXEMPTY_Msk) &&  /* Check RX empty => failed */
+                (u32delayno-- > 0)) ;
+
+        if (uart->FIFOSTS & UART_FIFOSTS_RXEMPTY_Msk)
+            return 0;
+
         pu8RxBuf[u32Count] = uart->DAT;    /* Get Data from UART RX  */
     }
 
@@ -346,18 +346,17 @@ uint32_t UART_Write(UART_T* uart,uint8_t *pu8TxBuf, uint32_t u32WriteBytes)
 
     for(u32Count=0; u32Count != u32WriteBytes; u32Count++)
     {
-        u32delayno = 0;
-        while((uart->FIFOSTS & UART_FIFOSTS_TXEMPTYF_Msk) == 0)   /* Wait Tx empty and Time-out manner */
-        {
-            u32delayno++;
-            if( u32delayno >= 0x40000000 )
-                return FALSE;
-        }
+        u32delayno = (SystemCoreClock / 10);
+
+        while (((uart->FIFOSTS & UART_FIFOSTS_TXEMPTYF_Msk) == 0) &&   /* Wait Tx empty and Time-out manner */
+                (u32delayno-- > 0)) ;
+
+        if ((uart->FIFOSTS & UART_FIFOSTS_TXEMPTYF_Msk) == 0)
+            return 0;
+
         uart->DAT = pu8TxBuf[u32Count];    /* Send UART Data from buffer */
     }
-
     return u32Count;
-
 }
 
 
@@ -367,7 +366,5 @@ uint32_t UART_Write(UART_T* uart,uint8_t *pu8TxBuf, uint32_t u32WriteBytes)
 
 /*@}*/ /* end of group Mini58_Device_Driver */
 
-/*** (C) COPYRIGHT 2012 Nuvoton Technology Corp. ***/
-
-
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/
 

@@ -7,7 +7,7 @@
  *
  * @note
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
  *****************************************************************************/
 #ifndef __CLK_H__
 #define __CLK_H__
@@ -242,7 +242,7 @@ void CLK_EnableXtalRC(uint32_t u32ClkMask);
 void CLK_DisableXtalRC(uint32_t u32ClkMask);
 void CLK_EnableModuleClock(uint32_t u32ModuleIdx);
 void CLK_DisableModuleClock(uint32_t u32ModuleIdx);
-void CLK_SysTickDelay(uint32_t us);
+int32_t  CLK_SysTickDelay(uint32_t us);
 uint32_t CLK_EnablePLL(uint32_t u32PllClkSrc, uint32_t u32PllFreq);
 void CLK_DisablePLL(void);
 uint32_t CLK_WaitClockReady(uint32_t u32ClkMask);
@@ -261,4 +261,4 @@ uint32_t CLK_WaitClockReady(uint32_t u32ClkMask);
 
 #endif //__CLK_H__
 
-/*** (C) COPYRIGHT 2015 Nuvoton Technology Corp. ***/
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/

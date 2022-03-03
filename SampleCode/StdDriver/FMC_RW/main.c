@@ -13,7 +13,6 @@
 
 #define PLL_CLOCK                   50000000
 
-
 #define APROM_TEST_BASE             0x3000
 #define DATA_FLASH_TEST_BASE        0x3000
 #define DATA_FLASH_TEST_END         0x4000

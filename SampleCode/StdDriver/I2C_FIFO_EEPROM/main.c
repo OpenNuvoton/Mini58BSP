@@ -70,6 +70,7 @@ void SYS_Init(void)
 void ACK_Polling(void)
 {
     uint32_t u32Status;
+    int32_t tout = SystemCoreClock / 10;
 
     /* Disable FIFO mode , don't need FIFO here */
     I2C_DISABLE_FIFO(I2C);
@@ -87,7 +88,7 @@ void ACK_Polling(void)
         u32Status = I2C_GET_STATUS(I2C);
         I2C_SET_CONTROL_REG(I2C, I2C_STO | I2C_SI); // STOP
     }
-    while( u32Status!= 0x18);
+    while (( u32Status != 0x18) && (tout-- > 0));
 
     /* Enable FIFO mode again */
     I2C_ENABLE_FIFO(I2C);

@@ -7,7 +7,7 @@
  *
  * @note
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2022 Nuvoton Technology Corp. All rights reserved.
 *****************************************************************************/
 #include "Mini58Series.h"
 
@@ -101,4 +101,4 @@ void GPIO_DisableInt(GPIO_T *gpio, uint32_t u32Pin)
 
 /*@}*/ /* end of group Mini58_Device_Driver */
 
-/*** (C) COPYRIGHT 2015 Nuvoton Technology Corp. ***/
+/*** (C) COPYRIGHT 2022 Nuvoton Technology Corp. ***/

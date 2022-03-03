@@ -241,7 +241,7 @@ void I2C_Init(void)
 /*---------------------------------------------------------------------------------------------------------*/
 int32_t main (void)
 {
-    uint32_t i;
+    uint32_t i, tout;
 
     /* Init System, IP clock and multi-function I/O */
     SYS_Init();
@@ -279,8 +279,20 @@ int32_t main (void)
         I2C0->CTL |= I2C_CTL_STA_Msk;
 
         /* Wait I2C Tx Finish */
-        while (g_u8EndFlag == 0);
-        while(I2C0->CTL & I2C_CTL_STO_Msk);
+        tout = SystemCoreClock;
+        while ((g_u8EndFlag == 0) && (tout-- > 0));
+        if (g_u8EndFlag == 0)
+        {
+            printf("Wait TX interrupt flag time-out!\n");
+            while (1);
+        }
+        tout = SystemCoreClock;
+        while ((I2C0->CTL & I2C_CTL_STO_Msk) && (tout-- > 0));
+        if (I2C0->CTL & I2C_CTL_STO_Msk)
+        {
+            printf("TX wait I2C_CTL_STO_Msk cleared time-out!\n");
+            while (1);
+        }
         g_u8EndFlag = 0;
 
         /* I2C function to read data from slave */
@@ -295,14 +307,32 @@ int32_t main (void)
         SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_ENABLE_Msk;
 
         /* Waiting for down-count to zero */
-        while((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) == 0);
+        tout = SystemCoreClock;
+        while (((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) == 0) && (tout-- > 0));
+        if ((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) == 0)
+        {
+            printf("Wait SysTick CTRL_COUNTFLAG flag time-out!\n");
+            while (1);
+        }
 
         /* I2C as master sends START signal */
         I2C0->CTL |= I2C_CTL_STA_Msk;
 
         /* Wait I2C Rx Finish */
-        while (g_u8EndFlag == 0);
-        while(I2C0->CTL & I2C_CTL_STO_Msk);
+        tout = SystemCoreClock;
+        while ((g_u8EndFlag == 0) && (tout-- > 0));
+        if (g_u8EndFlag == 0)
+        {
+            printf("Wait RX interrupt flag time-out!\n");
+            while (1);
+        }
+        tout = SystemCoreClock;
+        while ((I2C0->CTL & I2C_CTL_STO_Msk) && (tout-- > 0));
+        if (I2C0->CTL & I2C_CTL_STO_Msk)
+        {
+            printf("RX wait I2C_CTL_STO_Msk cleared time-out!\n");
+            while (1);
+        }
 
         /* Compare data */
         if (g_u8RxData != g_au8TxData[2])

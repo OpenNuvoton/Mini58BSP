@@ -85,12 +85,26 @@ void UART_Init(void)
 
 void PWM_Polling(uint8_t Channel)
 {
+    int32_t tout;
+
     // Polling, Wait 1 period interrupt flags
-    while((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << Channel)) == 0);
+    tout = SystemCoreClock;
+    while (((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << Channel)) == 0) && (tout-- > 0));
+    if ((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << Channel)) == 0)
+    {
+        printf("Wait PWM_INTSTS_ZIF0 timeout!\n");
+        while (1);
+    }
     PWM->INTSTS = (PWM_INTSTS_ZIF0_Msk << Channel);
 
     // Polling, Wait 2 period interrupt flags
-    while((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << Channel)) == 0);
+    tout = SystemCoreClock;
+    while (((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << Channel)) == 0) &&  (tout-- > 0));
+    if ((PWM->INTSTS & (PWM_INTSTS_ZIF0_Msk << Channel)) == 0)
+    {
+        printf("Wait PWM_INTSTS_ZIF0 timeout!\n");
+        while (1);
+    }
     PWM->INTSTS = (PWM_INTSTS_ZIF0_Msk << Channel);
 }
 

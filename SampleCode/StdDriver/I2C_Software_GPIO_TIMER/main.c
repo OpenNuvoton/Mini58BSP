@@ -59,6 +59,7 @@ void SYS_Init(void)
 int32_t main (void)
 {
     uint8_t Tx_Data[6];
+    int32_t tout;
 
     /* Init System, IP clock and multi-function I/O */
     SYS_Init();
@@ -82,20 +83,38 @@ int32_t main (void)
     printf("Write data into EEPROM\n");
     printf("Data:0x%x,0x%x,0x%x,0x%x\n",Tx_Data[2],Tx_Data[3],Tx_Data[4],Tx_Data[5] );
     I2C_SW_I_Send(0x50,Tx_Data,6);
-    while(I2C_SW_I_IsBZ());
-    if(I2C_SW_I_Count()!=6)
+    tout = (SystemCoreClock / 10);
+    while (I2C_SW_I_IsBZ() && (tout-- > 0));
+    if (I2C_SW_I_IsBZ())
+    {
+        printf("I2C busy timeout!\n");
+        while (1);
+    }
+    if (I2C_SW_I_Count() != 6)
         while(1);
     CLK_SysTickDelay(5000);
 
     printf("Write address into EEPROM\n");
     I2C_SW_I_Send(0x50,Tx_Data,2);
-    while(I2C_SW_I_IsBZ());
+    tout = (SystemCoreClock / 10);
+    while (I2C_SW_I_IsBZ() && (tout-- > 0));
+    if (I2C_SW_I_IsBZ())
+    {
+        printf("I2C busy timeout!\n");
+        while (1);
+    }
     if(I2C_SW_I_Count()!=2)
         while(1);
 
     printf("Read data form EEPROM\n");
     I2C_SW_I_Get(0x50,Tx_Data,4);
-    while(I2C_SW_I_IsBZ());
+    tout = (SystemCoreClock / 10);
+    while (I2C_SW_I_IsBZ() && (tout-- > 0));
+    if (I2C_SW_I_IsBZ())
+    {
+        printf("I2C busy timeout!\n");
+        while (1);
+    }
     printf("Data:0x%x,0x%x,0x%x,0x%x\n",Tx_Data[0],Tx_Data[1],Tx_Data[2],Tx_Data[3] );
     if(I2C_SW_I_Count()!=4)
         while(1);

@@ -63,6 +63,7 @@ void UART_Init()
 int32_t fill_data_pattern(uint32_t u32StartAddr, uint32_t u32EndAddr, uint32_t u32Pattern)
 {
     uint32_t u32Addr;
+    int32_t  tout;
 
     for (u32Addr = u32StartAddr; u32Addr < u32EndAddr; u32Addr += 4)
     {
@@ -71,7 +72,13 @@ int32_t fill_data_pattern(uint32_t u32StartAddr, uint32_t u32EndAddr, uint32_t u
         FMC->ISPADDR    = u32Addr;
         FMC->ISPDAT = u32Pattern;
         FMC->ISPTRG = FMC_ISPTRG_ISPGO_Msk;
-        while (FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk) ;
+        tout = FMC_TIMEOUT_WRITE;
+        while ((FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk) && (tout-- > 0));
+        if (FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk)
+        {
+            printf("FMC Write timeout at 0x%x!\n", u32Addr);
+            while (1);
+        }
     }
     return 0;
 }
@@ -81,6 +88,7 @@ int32_t  verify_data(uint32_t u32StartAddr, uint32_t u32EndAddr, uint32_t u32Pat
 {
     uint32_t    u32Addr;
     uint32_t    u32data;
+    int32_t     tout;
 
     for (u32Addr = u32StartAddr; u32Addr < u32EndAddr; u32Addr += 4)
     {
@@ -88,7 +96,13 @@ int32_t  verify_data(uint32_t u32StartAddr, uint32_t u32EndAddr, uint32_t u32Pat
         FMC->ISPCMD = FMC_ISPCMD_READ;
         FMC->ISPADDR    = u32Addr;
         FMC->ISPTRG = FMC_ISPTRG_ISPGO_Msk;
-        while (FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk) ;
+        tout = FMC_TIMEOUT_READ;
+        while ((FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk) && (tout-- > 0));
+        if (FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk)
+        {
+            printf("FMC Read timeout at 0x%x!\n", u32Addr);
+            while (1);
+        }
         u32data = FMC->ISPDAT;
 
         if (u32data != u32Pattern)
@@ -104,6 +118,7 @@ int32_t  verify_data(uint32_t u32StartAddr, uint32_t u32EndAddr, uint32_t u32Pat
 int32_t  flash_test(uint32_t u32StartAddr, uint32_t u32EndAddr, uint32_t u32Pattern)
 {
     uint32_t    u32Addr;
+    int32_t     tout;
 
     for (u32Addr = u32StartAddr; u32Addr < u32EndAddr; u32Addr += FMC_FLASH_PAGE_SIZE)
     {
@@ -113,7 +128,13 @@ int32_t  flash_test(uint32_t u32StartAddr, uint32_t u32EndAddr, uint32_t u32Patt
         FMC->ISPCMD = FMC_ISPCMD_PAGE_ERASE;
         FMC->ISPADDR    = u32Addr;
         FMC->ISPTRG = FMC_ISPTRG_ISPGO_Msk;
-        while (FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk) ;
+        tout = FMC_TIMEOUT_ERASE;
+        while ((FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk) && (tout-- > 0));
+        if (FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk)
+        {
+            printf("FMC Erase timeout at 0x%x!\n", u32Addr);
+            while (1);
+        }
 
         // Verify if page contents are all 0xFFFFFFFF
         if (verify_data(u32Addr, u32Addr + FMC_FLASH_PAGE_SIZE, 0xFFFFFFFF) < 0)
@@ -140,7 +161,13 @@ int32_t  flash_test(uint32_t u32StartAddr, uint32_t u32EndAddr, uint32_t u32Patt
         FMC->ISPCMD = FMC_ISPCMD_PAGE_ERASE;
         FMC->ISPADDR    = u32Addr;
         FMC->ISPTRG = FMC_ISPTRG_ISPGO_Msk;
-        while (FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk) ;
+        tout = FMC_TIMEOUT_ERASE;
+        while ((FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk) && (tout-- > 0));
+        if (FMC->ISPTRG & FMC_ISPTRG_ISPGO_Msk)
+        {
+            printf("FMC Erase timeout at 0x%x!\n", u32Addr);
+            while (1);
+        }
 
         // Verify if page contents are all 0xFFFFFFFF
         if (verify_data(u32Addr, u32Addr + FMC_FLASH_PAGE_SIZE, 0xFFFFFFFF) < 0)
