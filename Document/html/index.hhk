@@ -293,13 +293,13 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a368e5417dfc8239b696ecf3233a6a955a09774fa193a1c79327c02f3c5f26d393"><param name="Name" value="ADP_Stopped_RunTimeError"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga808b691f73f5988acf98189dc52c2258"><param name="Name" value="AHBCLK"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d83/group___mini58___p_e_r_i_p_h_e_r_a_l___m_e_m___m_a_p.html#ga92eb5d49730765d2abd0f5b09548f9f5"><param name="Name" value="AHBPERIPH_BASE"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gad0e91cb2e6d95c030ce2add25e7c39e4"><param name="Name" value="ALTCTL"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gad0e91cb2e6d95c030ce2add25e7c39e4"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6162b733283b23b1fc81bdb2ab6a9ef9"><param name="Name" value="ALTCTL"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6162b733283b23b1fc81bdb2ab6a9ef9"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gad0e91cb2e6d95c030ce2add25e7c39e4"><param name="Name" value="ALTCTL"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gad0e91cb2e6d95c030ce2add25e7c39e4"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d83/group___mini58___p_e_r_i_p_h_e_r_a_l___m_e_m___m_a_p.html#ga45666d911f39addd4c8c0a0ac3388cfb"><param name="Name" value="APB1PERIPH_BASE"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d83/group___mini58___p_e_r_i_p_h_e_r_a_l___m_e_m___m_a_p.html#ga25b99d6065f1c8f751e78f43ade652cb"><param name="Name" value="APB2PERIPH_BASE"></OBJECT>
@@ -354,21 +354,21 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d01/group___mini58___c_l_k___e_x_p_o_r_t_e_d___c_o_n_s_t_a_n_t_s.html"><param name="Name" value="CLK Exported Constants"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/d87/group___mini58___c_l_k___e_x_p_o_r_t_e_d___f_u_n_c_t_i_o_n_s.html"><param name="Name" value="CLK Exported Functions"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d26/group___mini58___p_e_r_i_p_h_e_r_a_l___d_e_c_l_a_r_a_t_i_o_n.html#ga4b355291fe6b8ba8e167ab0faa862e45"><param name="Name" value="CLK"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabc4c6580a6e99fbd6faf507f730c2ec3"><param name="Name" value="CLKDIV"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabc4c6580a6e99fbd6faf507f730c2ec3"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga42ae778f266a41953e0d625b77c8f76f"><param name="Name" value="CLKDIV"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga42ae778f266a41953e0d625b77c8f76f"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gab3f4848afe39a380101231bb0fd35d4d"><param name="Name" value="CLKDIV"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gab3f4848afe39a380101231bb0fd35d4d"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabc4c6580a6e99fbd6faf507f730c2ec3"><param name="Name" value="CLKDIV"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabc4c6580a6e99fbd6faf507f730c2ec3"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6ea1e761f8c180884bc051c73db22e13"><param name="Name" value="CLKDIV"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6ea1e761f8c180884bc051c73db22e13"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga42ae778f266a41953e0d625b77c8f76f"><param name="Name" value="CLKDIV"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga42ae778f266a41953e0d625b77c8f76f"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga9d505afae945a248261c38c266a4deab"><param name="Name" value="CLKOCTL"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d01/group___mini58___c_l_k___e_x_p_o_r_t_e_d___c_o_n_s_t_a_n_t_s.html#ga04c349396e3a4d47b0eab52a9514ee83"><param name="Name" value="CLKO_MODULE"></OBJECT>
@@ -594,14 +594,6 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga09268af0bfe8e5340cf8f297724a9f27"><param name="Name" value="CON"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga709765ae65421d9d51aa7539684197ac"><param name="Name" value="CTL1"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga069fd6acdea1842f24bba35267ff3ea5"><param name="Name" value="CTL"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga069fd6acdea1842f24bba35267ff3ea5"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga9cb6657ceeced88c80688cc910e43e60"><param name="Name" value="CTL"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga9cb6657ceeced88c80688cc910e43e60"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gaee8e65be2579f6ca7675e9a63886ab42"><param name="Name" value="CTL"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gaee8e65be2579f6ca7675e9a63886ab42"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
@@ -610,21 +602,29 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabb8d9df4695b742a04b52a7a64594322"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga069fd6acdea1842f24bba35267ff3ea5"><param name="Name" value="CTL"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga069fd6acdea1842f24bba35267ff3ea5"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga0a5218f3d6ce38a982289ba890e94ebc"><param name="Name" value="CTL"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga0a5218f3d6ce38a982289ba890e94ebc"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1c920595c6586bec644d46e2c1350b1c"><param name="Name" value="CTL"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1c920595c6586bec644d46e2c1350b1c"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabeaddca0794806b689834bdbeeaca072"><param name="Name" value="CTL"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabeaddca0794806b689834bdbeeaca072"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga9cb6657ceeced88c80688cc910e43e60"><param name="Name" value="CTL"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga9cb6657ceeced88c80688cc910e43e60"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gaa8a989c17bfe13704d599376218c9d93"><param name="Name" value="CTL"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gaa8a989c17bfe13704d599376218c9d93"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1c920595c6586bec644d46e2c1350b1c"><param name="Name" value="CTL"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1c920595c6586bec644d46e2c1350b1c"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="db/dcd/system___mini58_series_8c.html#a63bedf89ae7fbb102b8653aca20d3a14"><param name="Name" value="CyclesPerUs"></OBJECT>
   <UL>
@@ -1152,22 +1152,26 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d0/da9/group___mini58___i2_c___e_x_p_o_r_t_e_d___f_u_n_c_t_i_o_n_s.html#ga29b31f62a804d8127bc8d480f5140856"><param name="Name" value="I2C_Trigger"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d0/da9/group___mini58___i2_c___e_x_p_o_r_t_e_d___f_u_n_c_t_i_o_n_s.html#ga8e50c1443a4da54159a8bb2faed18b5f"><param name="Name" value="I2C_WAIT_READY"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gaf244c7a0518aff801a61660751055701"><param name="Name" value="IFA"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga0418d4cfbebf1037e83200b1d2e91ad3"><param name="Name" value="INTEN"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2954225147cc4d89f9431fa5aeec33e2"><param name="Name" value="INTEN"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga0418d4cfbebf1037e83200b1d2e91ad3"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2954225147cc4d89f9431fa5aeec33e2"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1fbc063a076e84e9b8f17ebcee04879e"><param name="Name" value="INTEN"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1fbc063a076e84e9b8f17ebcee04879e"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2954225147cc4d89f9431fa5aeec33e2"><param name="Name" value="INTEN"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga0418d4cfbebf1037e83200b1d2e91ad3"><param name="Name" value="INTEN"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2954225147cc4d89f9431fa5aeec33e2"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga0418d4cfbebf1037e83200b1d2e91ad3"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d26/group___mini58___p_e_r_i_p_h_e_r_a_l___d_e_c_l_a_r_a_t_i_o_n.html#ga71e19ac3883e6cdbc2a19126e1b590ab"><param name="Name" value="INTR"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d83/group___mini58___p_e_r_i_p_h_e_r_a_l___m_e_m___m_a_p.html#gaf5e455fe21c3e30300bdea0eeed7241e"><param name="Name" value="INTR_BASE"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/da6/struct_i_n_t_r___t.html"><param name="Name" value="INTR_T"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga791263d0be410c056405a90bf7ff81c5"><param name="Name" value="INTSRC"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gac535addafa0eb3c00a1fba2f4d845451"><param name="Name" value="INTSTS"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gac535addafa0eb3c00a1fba2f4d845451"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabfc9a19e31d66f608b9008c8c0f31eb8"><param name="Name" value="INTSTS"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabfc9a19e31d66f608b9008c8c0f31eb8"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
@@ -1175,10 +1179,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gae7e9084b9945be30518cb97148eb78ea"><param name="Name" value="INTSTS"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gae7e9084b9945be30518cb97148eb78ea"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gac535addafa0eb3c00a1fba2f4d845451"><param name="Name" value="INTSTS"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gac535addafa0eb3c00a1fba2f4d845451"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2e1d37bb184d4c29c053078c22abec62"><param name="Name" value="INTTYPE"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d13/_mini58_series_8h.html#afcd11e9e488b21dbbeb29c8298242ec4"><param name="Name" value="INT_CON_NMI_SEL_EN_Msk"></OBJECT>
@@ -12690,7 +12690,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gab3f4848afe39a380101231bb0fd35d4d"><param name="Name" value="CLKDIV"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabc4c6580a6e99fbd6faf507f730c2ec3"><param name="Name" value="CLKDIV"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
@@ -12698,11 +12698,11 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabc4c6580a6e99fbd6faf507f730c2ec3"><param name="Name" value="CLKDIV"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6ea1e761f8c180884bc051c73db22e13"><param name="Name" value="CLKDIV"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6ea1e761f8c180884bc051c73db22e13"><param name="Name" value="CLKDIV"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gab3f4848afe39a380101231bb0fd35d4d"><param name="Name" value="CLKDIV"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
@@ -12774,6 +12774,14 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga069fd6acdea1842f24bba35267ff3ea5"><param name="Name" value="CTL"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga9cb6657ceeced88c80688cc910e43e60"><param name="Name" value="CTL"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1c920595c6586bec644d46e2c1350b1c"><param name="Name" value="CTL"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
@@ -12786,7 +12794,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga069fd6acdea1842f24bba35267ff3ea5"><param name="Name" value="CTL"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga0a5218f3d6ce38a982289ba890e94ebc"><param name="Name" value="CTL"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
@@ -12798,23 +12806,15 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga9cb6657ceeced88c80688cc910e43e60"><param name="Name" value="CTL"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga0a5218f3d6ce38a982289ba890e94ebc"><param name="Name" value="CTL"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga709765ae65421d9d51aa7539684197ac"><param name="Name" value="CTL1"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga24820b94bbd2706f85d2bbed473fbd2c"><param name="Name" value="DAT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga158d79b640465c2687994504ceb19c42"><param name="Name" value="DAT"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga158d79b640465c2687994504ceb19c42"><param name="Name" value="DAT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga24820b94bbd2706f85d2bbed473fbd2c"><param name="Name" value="DAT"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
@@ -12914,11 +12914,11 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1fbc063a076e84e9b8f17ebcee04879e"><param name="Name" value="INTEN"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2954225147cc4d89f9431fa5aeec33e2"><param name="Name" value="INTEN"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2954225147cc4d89f9431fa5aeec33e2"><param name="Name" value="INTEN"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga1fbc063a076e84e9b8f17ebcee04879e"><param name="Name" value="INTEN"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
@@ -12930,15 +12930,15 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabfc9a19e31d66f608b9008c8c0f31eb8"><param name="Name" value="INTSTS"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gac535addafa0eb3c00a1fba2f4d845451"><param name="Name" value="INTSTS"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gae7e9084b9945be30518cb97148eb78ea"><param name="Name" value="INTSTS"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#gabfc9a19e31d66f608b9008c8c0f31eb8"><param name="Name" value="INTSTS"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
@@ -13222,7 +13222,11 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga45e9c068d3cc966e206bd45c9b04b074"><param name="Name" value="STATUS"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2e0ba9ab7857275c7d7d9d9d2c78cdd7"><param name="Name" value="STATUS"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga000cdb41ff688b3d840f8f3830a6298c"><param name="Name" value="STATUS"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
@@ -13230,15 +13234,11 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2e0ba9ab7857275c7d7d9d9d2c78cdd7"><param name="Name" value="STATUS"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga45e9c068d3cc966e206bd45c9b04b074"><param name="Name" value="STATUS"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6c6fa770a24a0372013c38701a9a4e4b"><param name="Name" value="STATUS"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga000cdb41ff688b3d840f8f3830a6298c"><param name="Name" value="STATUS"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   <UL>
@@ -14362,17 +14362,17 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga8920dbbf2ea9a13672cd2811d4b2e84b"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga4afe2cb0c518f0dff54c05986b987f33"><param name="Name" value="STATUS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6c6fa770a24a0372013c38701a9a4e4b"><param name="Name" value="STATUS"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga4afe2cb0c518f0dff54c05986b987f33"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6c6fa770a24a0372013c38701a9a4e4b"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2e0ba9ab7857275c7d7d9d9d2c78cdd7"><param name="Name" value="STATUS"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga2e0ba9ab7857275c7d7d9d9d2c78cdd7"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6c6fa770a24a0372013c38701a9a4e4b"><param name="Name" value="STATUS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga4afe2cb0c518f0dff54c05986b987f33"><param name="Name" value="STATUS"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga6c6fa770a24a0372013c38701a9a4e4b"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/db4/group___mini58__legacy___constants.html#ga4afe2cb0c518f0dff54c05986b987f33"><param name="Name" value="Mini58_legacy_Constants"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d2/d58/group___mini58___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083a4ce820b3cc6cf3a796b41aadc0cf1237"><param name="Name" value="SVCall_IRQn"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="df/d31/group___mini58___s_y_s___driver.html"><param name="Name" value="SYS Driver"></OBJECT>
@@ -15176,11 +15176,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d13/_mini58_series_8h.html#aa41b7a6f019b520dbd8f0c43f7b92c71"><param name="Name" value="WWDT_STATUS_WWDTRF_Pos"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/d15/struct_w_w_d_t___t.html"><param name="Name" value="WWDT_T"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d2/d58/group___mini58___c_m_s_i_s.html#ga905517438930a3f13cbc632e52990534"><param name="Name" value="__CM0_REV"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d3e/struct_____f_i_l_e.html"><param name="Name" value="__FILE"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d3e/struct_____f_i_l_e.html"><param name="Name" value="__FILE"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d3e/struct_____f_i_l_e.html#ac65d6afc3b2c74e74d56195829a1626f"><param name="Name" value="handle"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d2/d58/group___mini58___c_m_s_i_s.html#gac1ba8a48ca926bddc88be9bfd7d42641"><param name="Name" value="__FPU_PRESENT"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="db/d27/system___mini58_series_8h.html#a059398441439432f24955fd7f66240dd"><param name="Name" value="__HIRC"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="db/dcd/system___mini58_series_8c.html#a46c6d2508862c4fac7c7f45e873f22af"><param name="Name" value="__HSI"></OBJECT>
@@ -15203,13 +15198,13 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a201468129b483039afc5a619e2d31097"><param name="Name" value="_syscalls.c"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a8743fdbc616b2f214ae41792ab811610"><param name="Name" value="__attribute__"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a8743fdbc616b2f214ae41792ab811610"><param name="Name" value="semihosting.h"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a98e2c4eea386fd66abf40bce60154756"><param name="Name" value="__attribute__"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a98e2c4eea386fd66abf40bce60154756"><param name="Name" value="semihosting.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a8743fdbc616b2f214ae41792ab811610"><param name="Name" value="__attribute__"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a8743fdbc616b2f214ae41792ab811610"><param name="Name" value="semihosting.h"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a33bc2e95322efcc789c6cb81624b5527"><param name="Name" value="__initialize_args"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/d3d/retarget_8c.html#abb2a819d3c88269eba04ea62d759bef5"><param name="Name" value="__stdin"></OBJECT>
@@ -15228,11 +15223,11 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html"><param name="Name" value="_syscalls.c"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a4539db972bcf3dd8c8b429af0dc3789d"><param name="Name" value="kill"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a13a9bc88662fbfb3a256c3e90f8dd906"><param name="Name" value="kill"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html"><param name="Name" value="_syscalls.c"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a13a9bc88662fbfb3a256c3e90f8dd906"><param name="Name" value="kill"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a4539db972bcf3dd8c8b429af0dc3789d"><param name="Name" value="kill"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html"><param name="Name" value="_syscalls.c"></OBJECT>
   <UL>
@@ -15252,7 +15247,6 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d5c/group___mini58___f_m_c___e_x_p_o_r_t_e_d___f_u_n_c_t_i_o_n_s.html#ga1a26d3133f06211f483cb3b7a834fe31"><param name="Name" value="Mini58_FMC_EXPORTED_FUNCTIONS"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d3e/struct_____f_i_l_e.html#ac65d6afc3b2c74e74d56195829a1626f"><param name="Name" value="handle"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d6/d8c/group___mini58___i_o___r_o_u_t_i_n_e.html#gad50a5a7ee7c2900e8d88180d4dfdeaea"><param name="Name" value="inp16"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d6/d8c/group___mini58___i_o___r_o_u_t_i_n_e.html#ga9165d95e45927e33912b3310f3153419"><param name="Name" value="inp32"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d6/d8c/group___mini58___i_o___r_o_u_t_i_n_e.html#ga9bb51593ea4ba3818c07d34fbbe1de6b"><param name="Name" value="inp8"></OBJECT>
@@ -15260,13 +15254,13 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d6/d8c/group___mini58___i_o___r_o_u_t_i_n_e.html#gab4846e416af3b9cec294469c7ac4d2e6"><param name="Name" value="inps"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d6/d8c/group___mini58___i_o___r_o_u_t_i_n_e.html#ga71b02ca2239bebbd42d53d64f7c7b334"><param name="Name" value="inpw"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/d3d/retarget_8c.html#a97e9b1fe8d4c010474637a654aad6566"><param name="Name" value="kbhit"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a4539db972bcf3dd8c8b429af0dc3789d"><param name="Name" value="kill"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a4539db972bcf3dd8c8b429af0dc3789d"><param name="Name" value="_syscalls.c"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a13a9bc88662fbfb3a256c3e90f8dd906"><param name="Name" value="kill"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a13a9bc88662fbfb3a256c3e90f8dd906"><param name="Name" value="_syscalls.c"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a4539db972bcf3dd8c8b429af0dc3789d"><param name="Name" value="kill"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="df/dae/__syscalls_8c.html#a4539db972bcf3dd8c8b429af0dc3789d"><param name="Name" value="_syscalls.c"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/d3d/retarget_8c.html#a06fc87d81c62e9abb8790b6e5713c55ba29995ab8070d8bcd4b81920f486d8719"><param name="Name" value="lr"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d6/d8c/group___mini58___i_o___r_o_u_t_i_n_e.html#ga976c6d91f40eb1fb654483c585526b7d"><param name="Name" value="outp16"></OBJECT>
@@ -15501,11 +15495,11 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html"><param name="Name" value="semihosting.h"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a8743fdbc616b2f214ae41792ab811610"><param name="Name" value="__attribute__"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a98e2c4eea386fd66abf40bce60154756"><param name="Name" value="__attribute__"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html"><param name="Name" value="semihosting.h"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a98e2c4eea386fd66abf40bce60154756"><param name="Name" value="__attribute__"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html#a8743fdbc616b2f214ae41792ab811610"><param name="Name" value="__attribute__"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="d5/d32/semihosting_8h.html"><param name="Name" value="semihosting.h"></OBJECT>
   <UL>
