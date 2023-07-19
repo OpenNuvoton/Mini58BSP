@@ -99,7 +99,7 @@ extern "C"
  *
  *    @param    None
  *
- *    @return    UART baudrate mode2 register setting value
+ *    @return    UART baudrate mode1 register setting value
  *
  */
 #define UART_BAUD_MODE1        (UART_BAUD_BAUDM1_Msk)
