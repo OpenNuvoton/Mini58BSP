@@ -158,6 +158,9 @@ void UART_Open(UART_T* uart, uint32_t u32baudrate)
     uint32_t u32Clk = 0;
     uint32_t u32ClkDiv = 0;
     uint32_t u32Baud_Div;
+    uint32_t i = 0;
+    uint32_t u32RealBaudrate = 0, u32Err = 0, u32OldErr = 0;
+    uint32_t u32A = 0, u32B = 0;
 
     u8UartClkSrcSel = (CLK->CLKSEL1 & CLK_CLKSEL1_UARTSEL_Msk) >> CLK_CLKSEL1_UARTSEL_Pos;
     uart->FUNSEL = UART_FUNC_SEL_UART;
@@ -174,7 +177,7 @@ void UART_Open(UART_T* uart, uint32_t u32baudrate)
     u32ClkDiv = ( (CLK->CLKDIV & CLK_CLKDIV_UARTDIV_Msk) >> CLK_CLKDIV_UARTDIV_Pos );
     u32Clk = u32Clk/(u32ClkDiv + 1);
 
-    if(u32baudrate != 0)
+    if((u32baudrate != 0) && (uart != UART1))
     {
         u32Baud_Div = UART_BAUD_MODE2_DIVIDER(u32Clk, u32baudrate);
 
@@ -182,6 +185,49 @@ void UART_Open(UART_T* uart, uint32_t u32baudrate)
             uart->BAUD = (UART_BAUD_MODE0 | UART_BAUD_MODE0_DIVIDER(u32Clk, u32baudrate));
         else
             uart->BAUD = (UART_BAUD_MODE2 | u32Baud_Div);
+    }
+    else if ((u32baudrate != 0) && (uart == UART1))
+    {
+        for(i = 0; i < 0xf; i++)
+        {
+            u32Baud_Div = ((u32Clk + (u32baudrate*(9+i)/2)) / u32baudrate / (9+i));
+
+            u32RealBaudrate = u32Clk/(u32Baud_Div) / (9+i);
+
+            if(u32RealBaudrate > u32baudrate)
+            {
+                u32Err = u32RealBaudrate - u32baudrate;
+            }
+            else if (u32RealBaudrate < u32baudrate)
+            {
+                u32Err = u32baudrate - u32RealBaudrate;
+            }
+            else
+            {
+                u32B = 8 + i;
+                u32A = u32Baud_Div - 2;
+                break;
+            }
+
+            if(i == 0)
+            {
+                u32B = 8 + i;
+                u32A = u32Baud_Div - 2;
+                u32OldErr = u32Err;
+            }
+            else
+            {
+                if (u32OldErr > u32Err)
+                {
+                    u32B = 8 + i;
+                    u32A = u32Baud_Div - 2;
+                    u32OldErr = u32Err;
+                }
+            }
+        }
+
+        u32Baud_Div = (u32A << UART_BAUD_BRD_Pos) | (u32B << UART_BAUD_EDIVM1_Pos);
+        uart->BAUD = (UART_BAUD_MODE1 | u32Baud_Div);
     }
 }
 
@@ -236,6 +282,9 @@ void UART_SetLine_Config(UART_T* uart, uint32_t u32baudrate, uint32_t u32data_wi
     uint32_t u32Clk = 0;
     uint32_t u32ClkDiv = 0;
     uint32_t u32Baud_Div = 0;
+    uint32_t i = 0;
+    uint32_t u32RealBaudrate = 0, u32Err = 0, u32OldErr = 0;
+    uint32_t u32A = 0, u32B = 0;
 
     u8UartClkSrcSel = (CLK->CLKSEL1 & CLK_CLKSEL1_UARTSEL_Msk) >> CLK_CLKSEL1_UARTSEL_Pos;
 
@@ -249,7 +298,7 @@ void UART_SetLine_Config(UART_T* uart, uint32_t u32baudrate, uint32_t u32data_wi
     u32ClkDiv = ( (CLK->CLKDIV & CLK_CLKDIV_UARTDIV_Msk) >> CLK_CLKDIV_UARTDIV_Pos );
     u32Clk = u32Clk/(u32ClkDiv + 1);
 
-    if(u32baudrate != 0)
+    if((u32baudrate != 0) && (uart != UART1))
     {
         u32Baud_Div = UART_BAUD_MODE2_DIVIDER(u32Clk, u32baudrate);
 
@@ -257,6 +306,49 @@ void UART_SetLine_Config(UART_T* uart, uint32_t u32baudrate, uint32_t u32data_wi
             uart->BAUD = (UART_BAUD_MODE0 | UART_BAUD_MODE0_DIVIDER(u32Clk, u32baudrate));
         else
             uart->BAUD = (UART_BAUD_MODE2 | u32Baud_Div);
+    }
+    else if ((u32baudrate != 0) && (uart == UART1))
+    {
+        for(i = 0; i < 0xf; i++)
+        {
+            u32Baud_Div = ((u32Clk + (u32baudrate*(9+i)/2)) / u32baudrate / (9+i));
+
+            u32RealBaudrate = u32Clk/(u32Baud_Div) / (9+i);
+
+            if(u32RealBaudrate > u32baudrate)
+            {
+                u32Err = u32RealBaudrate - u32baudrate;
+            }
+            else if (u32RealBaudrate < u32baudrate)
+            {
+                u32Err = u32baudrate - u32RealBaudrate;
+            }
+            else
+            {
+                u32B = 8 + i;
+                u32A = u32Baud_Div - 2;
+                break;
+            }
+
+            if(i == 0)
+            {
+                u32B = 8 + i;
+                u32A = u32Baud_Div - 2;
+                u32OldErr = u32Err;
+            }
+            else
+            {
+                if (u32OldErr > u32Err)
+                {
+                    u32B = 8 + i;
+                    u32A = u32Baud_Div - 2;
+                    u32OldErr = u32Err;
+                }
+            }
+        }
+
+        u32Baud_Div = (u32A << UART_BAUD_BRD_Pos) | (u32B << UART_BAUD_EDIVM1_Pos);
+        uart->BAUD = (UART_BAUD_MODE1 | u32Baud_Div);
     }
 
     uart->LINE = u32data_width | u32parity | u32stop_bits;

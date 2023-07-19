@@ -102,6 +102,16 @@ extern "C"
  *    @return    UART baudrate mode2 register setting value
  *
  */
+#define UART_BAUD_MODE1        (UART_BAUD_BAUDM1_Msk)
+
+/**
+ *    @brief    Calculate UART baudrate mode0 divider
+ *
+ *    @param    None
+ *
+ *    @return    UART baudrate mode2 register setting value
+ *
+ */
 #define UART_BAUD_MODE2        (UART_BAUD_BAUDM1_Msk | UART_BAUD_BAUDM0_Msk)
 
 
