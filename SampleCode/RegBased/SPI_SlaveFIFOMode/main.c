@@ -158,7 +158,7 @@ int main(void)
 
     SPI->CTL |= SPI_CTL_FIFOEN_Msk;
     SPI->FIFOCTL |= (SPI_FIFOCTL_RXTHIEN_Msk | SPI_FIFOCTL_TXTHIEN_Msk);
-    SPI->FIFOCTL = (SPI->FIFOCTL & ~(SPI_FIFOCTL_TXTH_Msk | SPI_FIFOCTL_RXTH_Msk) |
+    SPI->FIFOCTL = ((SPI->FIFOCTL & ~(SPI_FIFOCTL_TXTH_Msk | SPI_FIFOCTL_RXTH_Msk)) |
                     (2 << SPI_FIFOCTL_TXTH_Pos) |
                     (1 << SPI_FIFOCTL_RXTH_Pos));
     NVIC_EnableIRQ(SPI_IRQn);

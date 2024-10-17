@@ -1,6 +1,6 @@
 /**************************************************************************//**
  * @file     LDROM_main.c
- * @version  V1.00
+ * @version  V2.00
  * $Revision: 4 $
  * $Date: 15/05/26 12:22p $
  * @brief    This sample code includes LDROM image (fmc_ld_iap)
@@ -10,7 +10,7 @@
  *           with IAP".
  *
  * @note
- * Copyright (C) 2015 Nuvoton Technology Corp. All rights reserved.
+ * Copyright (C) 2024 Nuvoton Technology Corp. All rights reserved.
 *****************************************************************************/
 #include <stdio.h>
 #include "Mini58Series.h"
@@ -68,10 +68,9 @@ void UART_Init()
 
 
 #ifdef __ARMCC_VERSION
-void __asm __set_SP(uint32_t _sp)
+void __set_SP(uint32_t _sp)
 {
-    MSR MSP, r0
-    BX lr
+    __set_MSP(_sp);
 }
 #endif
 
@@ -138,4 +137,13 @@ int main()
     while (1);
 }
 
-/*** (C) COPYRIGHT 2015 Nuvoton Technology Corp. ***/
+/*---------------------------------------------------------------------------------------------------------*/
+/*  Empty functions for reduce code size to fit into LDROM & solve the functions are not be defined.       */
+/*---------------------------------------------------------------------------------------------------------*/
+void ProcessHardFault()
+{}
+
+void SH_Return()
+{}
+
+/*** (C) COPYRIGHT 2024 Nuvoton Technology Corp. ***/

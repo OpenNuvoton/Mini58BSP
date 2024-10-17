@@ -125,4 +125,13 @@ _APROM:
     while (1);
 }
 
+/*---------------------------------------------------------------------------------------------------------*/
+/*  Empty functions for reduce code size to fit into LDROM & solve the functions are not be defined.       */
+/*---------------------------------------------------------------------------------------------------------*/
+void ProcessHardFault()
+{}
+
+void SH_Return()
+{}
+
 /*** (C) 2016-2017 Nuvoton Technology Corp. ***/
